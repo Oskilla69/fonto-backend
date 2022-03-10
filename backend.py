@@ -23,7 +23,7 @@ def get_street(road_str: str) -> List[str]:
     for idx, word in enumerate(lower_road_str):
         road_type = road_types.get(word)
         if road_type:
-            return [' '.join(road_str[:idx + 1])]
+            return [' '.join(map(lambda x: x.capitalize(), road_str[:idx + 1]))]
 
 # function for getting suburb and state
 def get_suburb(postcode: str) -> List[str]:
